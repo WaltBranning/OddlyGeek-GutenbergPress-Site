@@ -10,6 +10,10 @@ gutenberg_api = Api(app)
 
 
 class GetByLetter(Resource):
+    """Takes letter as an argument pulls a list of ebook where sortkey
+        matches the argument and returns a JSON object containing the
+        title, author, text_id. Useful for generating lists of books 
+        for browsing """
     def get(self, letter=''):
         query = Catalog.query.filter(Catalog.sortkey.like(f"{letter}%"))\
                                      .order_by(Catalog.title).all()
@@ -19,6 +23,10 @@ class GetByLetter(Resource):
 
 
 class GetCatalogTitleIndex(Resource):
+    """ Returns a JSONified dictionary with the first letter of the sortkey
+        as a dict.keys and the list of corresponding full sortkeys that 
+        match the next letter of sort keys for example: 
+        {'a': ['aa', 'ab', 'ac', ...etc], 'b': ['ba', 'bc', 'bd', ...etc] """
     def get(self, letter=''):
         query = db.session.query(Catalog.sortkey).order_by(Catalog.sortkey).all()
         index = {i.sortkey[0]:[] for i in query if i.sortkey and i.sortkey[0].isalpha()}
@@ -32,6 +40,10 @@ class GetCatalogTitleIndex(Resource):
 
 
 class GetCatalogAuthorIndex(Resource):
+    """ Returns a JSONified dictionary with the first letter of the author
+        as a dict.keys and the list of corresponding two letters that 
+        match the next letter of sort keys for example: 
+        {'a': ['aa', 'ab', 'ac', ...etc], 'b': ['ba', 'bc', 'bd', ...etc] """
     def get(self):
         query = db.session.query(Catalog.authors).order_by(Catalog.authors).all()
         index = {i.authors[0]:[] for i in query if i.authors and i.authors[0].isalpha()}
@@ -46,6 +58,7 @@ class GetCatalogAuthorIndex(Resource):
 
 
 class GetAuthors(Resource):
+    """ Simply returns an dictionary object of Authors sorted by last name. """
     def get(self, letter=""):
         query = db.session.query(Authors).filter(Authors.last_name\
                                     .like(f"{letter}%")).distinct()
@@ -55,6 +68,8 @@ class GetAuthors(Resource):
 
 
 class GetTitlesByAuthor(Resource):
+    """ Takes author name and returns JSON object with a list of ebooks with 
+        the ebook title, author name, and ebook id """
     def get(self, author): 
     
         get_works = db.session.query(Authors).filter(Authors.id.like(author)).scalar()
@@ -68,11 +83,15 @@ class GetTitlesByAuthor(Resource):
 
 
 class RetrieveTitle(Resource):
+    """When RetrieveTitle is called it pulls the book using EbookFectcher
+       which makes an availablity check. If not locally stored fetch from 
+       Project Gutenberg store to /static/ebooks/ and return book object, 
+       if locally stored return book object from /static/ebooks/"""
     def get(self, id):
-        book = utilities.EbookFetcher()
-        
+        book = utilities.EbookFetcher() 
         resp = book.download(id)
         
+        # Check if book existed locally if not mark catalog on download
         if not resp['existed']:
             entry = db.session.query(Catalog).get(id)
             entry.is_local = 1
@@ -92,13 +111,14 @@ gutenberg_api.add_resource(GetTitlesByAuthor, f'{api_root}/title/author/<string:
 gutenberg_api.add_resource(RetrieveTitle, f'{api_root}/title/<int:id>.epub')
 
 class SendResumePDF(Resource):
+    """ Simple api endpoint to fetch resume and return the file"""
     def get(self):
         
-        resp = os.path.join(os.getcwd(), 'gutenbergpress/static/walter_branning_resume.pdf')
+        resp = os.path.join(os.getcwd(), 'gutenbergpress/static/resume.pdf')
         print(resp)
         return send_file(resp)
 
-gutenberg_api.add_resource(SendResumePDF, '/about/walter/resume/walter_branning_resume.pdf')
+gutenberg_api.add_resource(SendResumePDF, '/about/walter/resume/resume.pdf')
 
 
 """Quick Utility Code Pen: used to call functions to work database"""
