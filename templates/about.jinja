@@ -1,0 +1,94 @@
+{% extends 'base.jinja' %}
+
+{% block main %}
+<section class="about-container">
+    <h1>About TheGutenbergPress @ OddlyGeek</h1>
+    <h2>The Goal</h2>
+
+    <p>The end goal of TheGutenbergPress is to provide a venue for the appreciation of classic literature. Many of these
+        books are quite old, and all the books here are in the public domain, but just because they are old
+        and free doesn't mean that they aren't worth reading. Some of the greatest literary works
+        in history are in fact very old and are still relevant to this day and age.</p>
+
+    <p>Indeed, some of these books have been inspiring readers for generations and
+        their names are still known and still influence writers of today in thier respective
+        genres. Would we have our Captain Jack Sparrows and CSI telvision shows, if it wasn't
+        for books like <a href="{{ url_for('title', id='120')}}">Treasure Island</a> and <a
+            href="{{ url_for('title', id='1661')}}">Sherlock Holmes</a>. It is
+        easy to see how much those books influenced those whole genres. They are even to this
+        day fun and interesting to read and why they still influence our culture today. Whether
+        the heart felt stories of <a href="">Charles Dickens</a>, to the adventures of
+        <a href="">Jules Verne</a>, or the epic <a href="{{ url_for('title', id='1152')}}">Volsunga Saga</a>
+        of Norse Mythology that has deeply influence the Fantasy genre.
+    </p>
+
+    <p>These books should not fall into obscurity, it is sad that so many of them already have
+        and that the younger generations haven't heard of many of them. This site wants to be a
+        part of the solution for that. To bring a section of the best of these great works and get them
+        back into the hands of those it could impact, young and old alike and to provide a pleasant user
+        experience that allows the titles more be more accessible and navigable. Instead of
+        being lost in the sheer number of public domain books there are out there</p>
+
+    <p>While <a href="https://www.gutenberg.org/">Project Gutenberg</a> provides the laudable and
+        valuable archival and preservation of humanities literary works, many of the titles serve more
+        historical or scholarly interest and the sheer number of books archived can make navigation
+        and discovery cumbersome. That is why this site's purpose is to provide curated subset of titles.
+        To provide a place to not only preserve but to promote the classics and to dig relevant titles
+        that may have been mostly forgotten in the passage of time.</p>
+</section>
+<section class="about-container">
+    <h3>The Beginnings</h3>
+
+    <p>First, this site owes a huge debt of gratitude to <a href="https://www.gutenberg.org/">Project Gutenberg</a>
+        this site would not exsist if it wasn't for the work done there. Project Gutenberg is still very much relevant
+        and provides an important service to the preservation of literary history. This site isn't meant to undermine
+        or diminish their work but instead to complement and supplement it.</p>
+
+    <p>That being said, this site actually started as a small script that I wrote as a practice project
+        while getting back into the Python programming language. The purpose of the script was to download
+        books from Project Gutenberg and save them locally. Then I decided to parse the catalog and store a manifest
+        to the local library. One thing just led to another, pretty soon I had the idea to build a portfolio
+        project site as a fun way practical way to refine my skills and challenge me to learn new things. So using the
+        PG catalog as a source of content, TheGutenbergPress@OddlyGeek was born.</p>
+    <p>
+        At first this site was just a mirror to the catalog at PG. Then that changed to, I have always had an interest
+        in
+        literature and have read a number of the classics; that interest is one of the reasons I picked public domain
+        books to begin with. Then after the time I spent with the data from PG I realized there was a niche for
+        promoting some of these old books and providing a place for people to find and read them. Plus, between the
+        Internet Archives and Project Gutenberg there wasn't much of a need for more archiving but an increase in
+        exposure for some forgotten or near forgotten works. And, I hope people find that here, along with some
+        enjoyment, entertainment, and who knows maybe even some enlightenment if that what they are after.</p>
+</section>
+<section class="about-container">
+    <h4>The Present</h4>
+    <p>TheGutenbergPress is still very much a work in progress with more refinement and content planned!</p>
+
+
+</section>
+
+<section class="about-container">
+    <h5>The Details</h5>
+    <p>The backend is written in Python using the Flask framework and I choose SQLite for the database and interface
+        with the database with SQLAlchemy. The frontend HTML is all structured using the Jinja2 templating engine and
+        all pages are to one level or another dynamically generated.
+
+        Scripting side it is all vanilla Javascript with some libraries such as EPUB.JS ebook reader that allows user to
+        read the entire book online using the online ebook reader or to preview the book then download and store
+        locally. I used the Dexie.JS for client side database storage and caching. This helps as the actual catalog is
+        nearly 60,000
+        titles and can be a huge chunk of data. So in the browse section, a call is made to the catalog api and the
+        catalog data is sent to the browser where it is stored in a local indexedDB database, which allows the site
+        after the initial data loads (which load fast since the data is broken into alphabetical section and only
+        retrieved on demand) to be very quick and responsive even with such a large amount of data. Note - I am still
+        working on the UI for browsing the data, it is not in its finished state.
+
+        The books themselves are only retrieved from Project Gutenberg when requested for the first time from the
+        GutenbergPress where I then store locally on my server if the book is not found locally. The motivation for this
+        being, I do not want to overload Project Gutenberg's server by downloading a bunch of unnecessary titles and
+        <b>then</b>
+        having to store them. This way I have only what is of interest to people and slowly build a catalog of relevant
+        titles.</p>
+    <span id="resume-tag">My resume can be found <a href="{{url_for('resume')}}">here</a>.</span>
+</section>
+{% endblock main %}

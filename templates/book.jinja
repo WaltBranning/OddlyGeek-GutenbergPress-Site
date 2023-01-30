@@ -1,0 +1,27 @@
+{% extends 'base.jinja' %}
+
+{% block main %}
+
+<div id="ebook-head" 
+     itemscope itemtype ="https://schema.org/Book" 
+     itemid="{{content.text_number}}"> 
+<link itemprop="bookFormat" href="http://schema.org/EBook">
+<meta itemprop="price" content="Free">
+<span><h1 id="ereader-title" itemprop="name">{{content.title}}</h1>
+<h2 id="ereader-author" itemprop="author"> By {{content.authors}}</h2></span>
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-via="OddlyGeek" data-hashtags="classicbooks #freebooks #ebook" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="/gutenbergpress/catalog/title/{{content.text_number}}.epub">
+<img id="download" src="{{ url_for('static', filename='imgs/icons/dwnld-icon.svg') }}">
+</a>
+{% if content.genre %}
+    <meta itemprop="genre" content="{{content.genre}}">
+{% endif %}
+</div>
+<div id="ebook-body">
+    <div id="spinner-container">
+        Loading Book
+        <div id="spinner"></div>
+    </div>
+</div>
+
+{% endblock main %}

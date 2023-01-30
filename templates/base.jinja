@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'metadata.jinja' %}
+
+{% if content%}
+    {%if content.title %}
+    <title>{{content.title}} - GutenbergPress</title>
+    <meta name="twitter:title" property="og:title" content="{{content.title}} - GutenbergPress">
+    {% else %}
+    <title>GutenbergPress</title>
+    <meta name="twitter:title" property="og:title" content="GutenbergPress">
+    {%endif %}
+{% else %}
+    <title>GutenbergPress</title>
+    <meta name="twitter:title" property="og:title" content="GutenbergPress">
+{% endif %}
+{% include 'favicon.jinja' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/alt-base.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+{% if request.endpoint == 'featuredreading'%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/featuredreading.css') }}">
+{% elif request.endpoint == 'about'%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endif %}
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+    <section class="navbar">
+        <a itemprop="mainEntityOfPage" href="/"><span itemprop="name">TheGutenbergPress</span></a>
+        {# <a href="#">OddlyGeek</a> #}
+        <a href="https://www.buymeacoffee.com/WalterBranning"><img 
+            id="buy-me-a-coffee"
+            alt="Image link to Buy Me A Coffee - For Walter Branning"
+            src="{{url_for('static', filename='imgs/icons/BMC.svg')}}"></a>
+    </section>
+    <main class="gutenberg-container">
+        
+        <div class="head">
+            <nav class="nav-container">
+                
+                <a href="{{url_for('featuredreading', subject='classics')}}">Books</a>
+                <a href="{{url_for('writers')}}">Writers</a>
+                <a href="{{url_for('subjects')}}">Subjects</a>
+                <a href="{{url_for('subjects')}}">Genre</a>
+                <a href="{{url_for('search')}}">Search</a>
+                <a href="{{url_for('about')}}">About</a>
+            
+            </nav>
+
+        </div>
+            <div class="main-container" id="main-container">
+    
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+    </main>
+</body>
+
+    {% include 'scripts.jinja' %}
+
+</html>

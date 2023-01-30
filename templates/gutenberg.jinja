@@ -1,0 +1,64 @@
+{% extends 'base.jinja' %}
+
+{# Template for landing page #}
+    
+{% block main %}
+    
+        {# Template for the Featured Author section on landing page #}
+        <section class="features" id="featured-author" itemscope itemtype="https://schema.org/Person">
+            <h1>Featured Writer</h1>
+            <div class="featured-content collapsible">
+                <a href='#' onclick="GetTitlesByAuthor({{content.author.id}})">
+                    <img src="{{ url_for('static', 
+                        filename='imgs/author_portraits/id'+content.author.id+'.jpg') }}"
+                        alt="A portrait of Author {{content.author.name}}" itemprop="image">
+                </a>
+                <p><span class="author-name" itemprop="name">
+                <a href='#' onclick="GetTitlesByAuthor({{content.author.id}})" itemprop="url">{{ content.author.name }}</a></span>
+                    {{ content.author.bio }} <b>Learn more about <a href="{{content.author.link}}"
+                                itemprop="url">{{ content.author.name }}...</a></b> </p>
+            </div>
+        </section>
+        
+        <section class="features" id="notable-works">
+            <h1>Endearing Classics</h1>
+            <div class="featured-content featured-flex-container" id="notable-books">
+                {% for book in content.notable_works %}
+                    <div class="featured-book" itemscope itemtype="https://schema.org/Book">
+                        <link itemprop="bookFormat" href="http://schema.org/EBook">
+                        <meta content="{{book.title}}" itemprop="name">
+                        <a href="{{ url_for('title', id=book.id) }}" itemprop="url">
+                            <img src="{{ url_for('static', filename='imgs/book-covers/'+book.id+'.jpg')}}"
+                                alt="Book cover for {{book.title}} by {{book.author}}" itemprop="image">
+                        </a>
+                    </div>
+                {% endfor %}
+                <span class="see-more-link">
+                    <a href="{{ url_for('featuredreading', subject='classics') }}">See More</a>
+                </span>
+            </div>
+        </section>
+
+        <section class="features" id="reading-lists">
+            <h1>Curated Reading Recommendations</h1>
+            <div class="featured-content featured-flex-container">
+                {% set subjects=['adventure', 'scifi', 'mystery']%}
+                {% for subject in subjects %}
+                <div class="reading-list-subject">
+                    <a href="{{ url_for('featuredreading', subject=subject) }}">
+                        <img src="{{url_for('static', filename='imgs/nav/'+subject+'.jpg')}}"
+                            alt="Picture to represent the reading list - {{subject}}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+       
+        {# <section class="features" id="discover-new">
+            <h1>Discover Something....</h1>
+            <div class="featured-content"></div>
+        </section> #}
+
+{% endblock %}
+
+

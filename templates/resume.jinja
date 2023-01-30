@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include 'googletag.jinja' %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="https://www.linkedin.com/in/walter-branning/">
+<meta name="description" content="Resume for Python Developer Walter Branning">
+<title>Walter Branning - Resume</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='imgs/icons/walt.ico')}}" type="image/x-icon" >
+<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+<script type="application/ld+json">{% include 'resumeJson.jinja'%}</script>
+</head>
+<body>
+<aside id="side-bar">
+    <h2>Walter Branning</h1>
+    <img id="headshot" src="{{ url_for('static', filename='imgs/author_portraits/walter.jpg') }}" 
+         alt="A picture of Walter Branning standing in front of the New York City skyline">
+    <div class="aside-item contact">
+        
+        <h3>Contact</h3>
+        
+        <span class="aside-label">Email &#9993;</span>
+        <span class="aside-detail small-text"><a href="mailto:walter.d.branning@icloud.com">Walter.D.Branning&#8203;@icloud.com</a></span>
+        
+        <span class="aside-label">Phone &#9743;</span>
+        <span class="aside-detail">(256)591-7495</span> 
+        
+        <span class="aside-label">
+            <a href="https://www.linkedin.com/in/walter-branning"><img src="{{ url_for('static', filename='imgs/icons/LI-Logo.png') }}" alt="LinkedIn logo image"></a>
+        </span>
+        <span class="aside-detail external-link"><a href="https://www.linkedin.com/in/walter-branning">Walter Branning </a></span>
+
+    </div>
+    <div class="aside-item education">
+        
+        <h3>Education</h3>
+
+        <span class="aside-label">Gadsden State Community College</span>
+        <span class="aside-detail small-text">Associates Degree<br>Electronics Engineering Technologies<br>Oct 2001 - May 2004</span>
+        <span class="aside-detail aside-text smaller-text">
+            During this time, produced a practical understanding along with real-world 
+            application of electrical and electronic theory. Learning about the electromagnetic
+            principles behind AC/DC circuits, as well as the characteristics of series and 
+            parallel circuits, and how resistive, capacitive, and inductive components behave
+            in these circuits. Also training in the function of semiconductor and solid-state 
+            electronic circuits, such as bridge rectifiers, signal amplifiers, and transistor 
+            latches, as well as digital logic circuits and integrated circuits. 
+            Additionally, becoming familiar with the visual forms of major electronic components,
+            such as resistors, capacitors, diodes, transistors, and transformers, 
+            and was able to recognize them in both schematic representation and physical packaging.
+            Furthermore, traingin in troubleshooting equipment with visual inspection
+            and detailed schematics, using equipment such as volt-ohm and amp meters,
+            oscilloscopes, digital probes, signal tracers, and frequency generators.
+            Overall, the time at this school provided a solid and invaluable foundation in electrical 
+            and electronic theory and practical skills.
+        </span>
+        
+        {# <span class="aside-label">Codecadmy</span>
+        <span class="aside-detail small-text">Course Certificate<br>Learn Python 3 Course<br>Summer 2022</span> #}
+
+    </div> 
+</aside>
+
+<section id="main-body">
+    <header>
+        <h1>One word to summarize my potential and strengths is - Maker.</h1> <p>This word reflects my
+    passion for building and creating. Being driven not only by a desire to learn but to apply and use
+    that knowledge. Possessing a naturally curious mind that enjoys discovering the why and how
+    things work and blessed with an ability to quickly grasp concepts and apply them. This
+    ability and a willing eagerness to learn is my greatest strength. <b>Give me a challenge and I will
+    rise to meet it.</b></p>  
+         <p>Some of relevant past experience has been: Python applications including both online,
+    such as websites and API development; as well as local applications including file
+    modification batching routines, web scraping, cleaning and parsing data dumps. Including experience developing 
+    in Windows but with more familiarity with Linux development environments and work flows; including working from 
+    within the CLI and including tools such as ssh, nano, etc, while also using several different IDEs like Visual Studio Code, along with other enviroments
+     and tools such as Jupyter-Notebook and ipython.</p>                 
+    </header>
+
+    <div class="separator"><h2>Experience / Work History</h2></div>
+
+    <div class="experience">
+        <h3>Full Stack Web Developer | <a href="https://www.gutenbergpress.oddlygeek.com">GutenbergPress.OddlyGeek.com</a></h3>
+        <h4>Anniston, AL</h4>
+        <p>The GutenbergPress is a personal sandbox/portfolio site developed in Python, Javascript, CSS3, and HTML5
+           as a means to refine and reinforce my skill set, while challenging myself to learn. 
+           Putting priority on concepts such as mobile friendly responsive UI design, pleasant UX and efficient resouce usage.
+           Notable features being: online ebook reader, browser side indexedDB database for large catalog caching, and 
+           a consideralbly sized catalog of almost 60,000 titles forcing creative solution finding to maintain efficiency</p>
+        <ul>
+            <li>&#10022; Python - <a href="https://flask.palletsprojects.com/">Flask</a> web app with API to handle book data requests from client. Catalog data is stored server side in a SQLite database.</li>
+            <li>&#10022; Javascript - Vanilla JS with along with <a href="http://futurepress.org/">epub.js</a> online eBook reader library, <a href="https://dexie.org/">dexie.js</a> for client side database.</li>
+            <li>&#10022; CSS3 - UI and UX designed with a mobile responsiveness in mind, the styles sheets are written in <a href="https://sass-lang.com/">SASS</a> with quickly adapable scheming in mind.</li>
+            <li>&#10022; HTML5 - Pages are dynamically generated using the Jinja2 templating engine, and focuses on being SEO friendly and using <a href="https://schema.org/">Schema.org</a> compliant structured data.</li>
+        </ul>
+    </div>
+
+    <div class="experience">
+        <h3>Electronics Mechanic | Anniston Army Depot</h3>
+        <h4>Anniston, AL January 2003 – October 2021</h4>
+        <p>As an Electronics Mechanic, I was regarded as a subject matter specialist and
+           was frequently called upon to provide technical guidance and training on the testing,
+           fabrication, and repair of difficult or complex problems or assemblies.</p>
+        <ul>
+            <li>&#10022; Communicated with engineers and vendors to correct any design issues and submit ideas for improvements in future revisions.</li>
+            <li>&#10022; Wrote and modified circuit testing programs for DIT-MCO automated computer controlled circuit analyzers.</li>
+            <li>&#10022; Leveraged comprehensive technical and analytical expertise and to solve complex problems by interpreting blueprints, wiring diagrams, and schematics.</li>
+            <li>&#10022; Worked together with engineers and quality assurance to find best shop practices and manufacturing procedures for the assembly.</li>
+        </ul>
+    </div>
+    <a id="pdf-download" href='/about/walter/resume/resume.pdf'>PDF Version</a>
+</section>
+</body>
+</html>

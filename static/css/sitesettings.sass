@@ -1,0 +1,22 @@
+@import "palette"
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap')   
+    
+    
+$base-font-size: 18px
+$background: #ffffea
+$header-color: black
+$border-color: black
+
+$brand: $hook-green
+$brand-dark:   #34685d
+$brand-darker: #2c584f
+$brand-light: #43a08e
+
+$font-color: black
+
+$border-width: 2px    
+$width: 1200px
+
+
+@mixin resp-font($resp-size, $base-size: 1rem)
+    font-size: calc( $base-size + $resp-size)

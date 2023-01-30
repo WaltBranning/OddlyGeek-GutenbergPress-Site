@@ -1,0 +1,38 @@
+/* SCSS Gradient */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+.about-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2% 2% 2%;
+}
+.about-container h1 {
+  text-align: center;
+  font-size: calc(0.9rem + 0.9vw);
+}
+.about-container h2, .about-container h3, .about-container h4, .about-container h5 {
+  font-size: calc(1rem + 0.75vw);
+}
+@media only screen and (max-width: 718px) {
+  .about-container h2, .about-container h3, .about-container h4, .about-container h5 {
+    text-align: center;
+  }
+}
+.about-container p {
+  text-indent: 3%;
+  margin: 1%;
+  font-size: calc(0.75rem + 0.5vw);
+}
+.about-container a {
+  font-size: calc(0.75rem + 0.5vw);
+}
+
+#resume-tag {
+  display: block;
+  margin: 0 auto 2% auto;
+  text-align: center;
+  font-size: calc(1rem + 0.5vw);
+}
+#resume-tag a {
+  font-size: calc(1rem + 0.75vw);
+  font-weight: 750;
+}/*# sourceMappingURL=about.css.map */

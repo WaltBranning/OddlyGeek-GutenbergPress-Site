@@ -1,0 +1,178 @@
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap')
+$width: 1200px
+$side-bar-pad: 5%
+
+@mixin resp-font($resp-size, $base-size: 1rem)
+    font-size: calc( $base-size + $resp-size)
+
+
+*
+    font-size: 18px
+    margin: 0
+    padding: 0
+    text-decoration: none
+    box-sizing: border-box
+
+html
+    height: 100%
+
+body
+    display: flex
+    flex-wrap: wrap
+    max-width: $width
+    // height: calc($width * 1.29411)
+    // height: 100vh
+    min-height: 100%
+    margin: auto
+    // @media (min-width: 718px)
+    box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+
+.small-text
+    @include resp-font(.4vw, .7rem)
+    a
+        @include resp-font(.4vw, .7rem)
+
+.smaller-text
+    @include resp-font(.1vw, .65rem)
+    a
+        @include resp-font(.4vw, .7rem)
+
+#side-bar
+
+    word-wrap: break-word
+    @include resp-font(1vw, 1rem)
+    letter-spacing: 1px
+    font-family: Calibri, sans-serif
+    color: #fffffd
+    padding: 1% 0 
+    height: inherit
+    background: #576d7b
+    width: 27%
+    border-right: 2px #171d21 solid
+    #headshot
+        display: block
+        margin: auto
+        text-align: center
+        
+        max-width: 75%
+        border-radius: 25px
+        border: 1px solid black
+        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+    h2
+        // height: 2.5%
+        padding: 0 0 5% $side-bar-pad
+        letter-spacing: 2px
+        font-weight: 1000
+        @include resp-font(1.5vw, 1.5rem)
+        text-shadow: 1px 3px 8px #00083995
+
+    @media only screen and (max-width: 718px)
+        width: 100vw
+        border-bottom: 2px #171d21 solid
+        border-right: 0
+        #headshot
+            display: block
+            margin: auto
+            max-width: 50%
+            margin-bottom: 1%
+        h2
+            text-align: center
+            @include resp-font(.5vw, 2rem)
+            letter-spacing: 0px
+            padding-bottom: 1%
+            
+.aside-item
+    $spacing: 3%
+    // text-shadow: 1px 3px 8px #00083995
+    padding: 5% 0
+    display: flex
+    flex-flow:  column
+
+    h3
+        text-shadow: 1px 3px 8px #00083995
+        padding: 2px 0 2px $side-bar-pad
+        margin-bottom: 2%
+        @include resp-font(.75vw, 1.5rem)
+        font-weight: 1000
+        letter-spacing: 2px
+        flex-basis: 100%
+        background: #425563
+        height: 50px
+    img
+        width: 40%
+    a
+      color: #fffffd  
+    
+    .aside-label
+        padding: $spacing 0 0 $side-bar-pad
+        @include resp-font(.25vw, 1rem)
+        font-weight: 750
+    .aside-detail
+        padding: 0 0 $spacing $side-bar-pad
+        font-weight: 500
+    
+    .aside-text
+        font-weight: 400
+        // text-align: justify
+        
+    .external-link
+        a
+            color: #fffffd
+        a:after
+            content: url('/static/imgs/icons/external_wh16x16.png')
+    @media only screen and (max-width: 718px)
+        padding: 2% 0
+        h3
+            margin-bottom: 1%
+        img
+            width: 30%
+        .aside-label
+            padding: 1% 0 0 $side-bar-pad
+        .small-text
+            a
+                @include resp-font(.7vw, .9rem)
+            
+#main-body
+    position: relative
+    width: 73%
+    padding: 3%
+    text-align: justify
+    text-justify: inter-word
+    h1
+        text-align: center
+        @include resp-font(.35vw, 1rem)
+    h2
+        $darker: #5b5b5b
+        border-image: linear-gradient(90deg, white ,#ffffff , $darker, $darker, black, $darker,$darker, #ffffff, white) 30
+        border-width: 3%
+        border-style: solid
+        @include resp-font(.5vw, 1rem) 
+        text-align: center
+        margin: 3% 0
+    p  
+        text-indent: 3%
+        &:not(:last-child)
+            margin-bottom: 2%
+    ul
+        margin: 1% 5%
+    li
+        list-style-position: outside
+        list-style-type: none
+        &:not(:last-child)
+            margin-bottom: 1%
+    .experience
+        &:not(:first-child)
+            margin-top: 3%
+    @media only screen and (max-width: 718px)
+        width: 100%
+        h3
+            text-align: left
+#pdf-download
+    text-align: center
+    width: 100%
+    position: absolute
+    bottom: 5px
+    @media (max-width: 718px)
+        margin-top: 25px
+        display: block
+        position: relative

@@ -1,0 +1,311 @@
+@import "sitesettings"
+
+*
+    font-size: $base-font-size
+    margin: 0
+    padding: 0
+    text-decoration: none
+    box-sizing: border-box
+    // font-family: 'Libre Baskerville', serif
+
+html, body
+    height: 100%
+    display: block
+    background: $background
+    overflow-x: hidden
+    overflow-y: overlay
+    a
+        color: $brand-light
+        font-weight: 750
+
+::-webkit-scrollbar
+    width: 0.6vw
+::-webkit-scrollbar-track
+    background: transparent
+::-webkit-scrollbar-thumb
+    border-radius: 5px
+    // background: $brand
+    background: #2c584f92
+
+
+
+
+.navbar
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 3.25%
+    min-height: 35px
+    padding: auto
+    background: $gutenberg-gray
+    a
+        // font-family: Galada
+        margin: 0 1%
+        font-family: 'Libre Baskerville', serif
+        @include resp-font(.5vw)
+        color: $laurel-green
+        // width: 10vw
+#buy-me-a-coffee
+    width: 22vw
+    max-width: 160px
+    max-height: 45px
+    opacity: .85
+        // flex-basis: 25vw
+    
+
+.gutenberg-container
+    width: 100%
+    height: auto
+    margin: auto
+    // border: $border-width solid $border-color
+
+
+
+    .nav-cell
+        width: 16.667%
+        height: auto
+        display: block
+        cursor: pointer
+        background-color: transparent
+
+        button
+            border: none
+            background-color: transparent
+            color: $header-color       
+        .menu-btn 
+            @include resp-font(1.25vw, 1rem)
+            // background-color: inherit
+            
+            font-weight: bolder
+            width: 100%
+        .arrow-down
+            line-height: 1%
+            font-size: 3vw
+            background-color: transparent 
+        
+        .book-index-container
+            font-size: 200%
+            width: 600%
+            position: relative
+            display: none      
+            min-height: 90%
+            background-color: $brand-dark
+            box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+
+            .outer-book-index
+                margin: auto
+                display: inline-block
+
+.book-index
+    float: left
+    margin-right: 1vw
+
+    a
+        cursor: pointer
+        color: #1d1d1d
+        position: relative
+
+    &:nth-of-type(2n) &-letter
+        // background: #838383
+
+    &-list 
+        width: 100%
+        border-image: linear-gradient(90deg, #34685d, $brand-darker, $brand-darker, #34685d) 30
+        border-width: 1%
+        border-style: solid
+        line-height: 95%
+        // border-top: 50px solid  #2c584f
+        display: none
+        a
+            font-size: 85%
+            color: #333
+        &:target
+            display: block
+
+
+.main-container
+    // margin: 1vh auto
+    height: 100%
+    overflow-y: auto
+    overflow-x: hidden
+    
+    // Features Section of Home  
+
+    .features
+        a
+            font-weight: bold
+            color: $brand-light
+        h1
+            color: $brand-darker
+
+        margin: 1% auto
+        text-align: center
+        max-width: $width
+        min-height: 25%
+        h1
+            // 
+            @include resp-font(.9vw, 2rem)
+
+        .author-name
+            font-weight: bolder
+            @include resp-font(.75vw, 1.25rem)
+
+        .featured-content
+            padding: 2% 3%
+            border-image: linear-gradient(90deg,transparent ,$background, $brand-darker, $brand-darker, $brand-darker,$brand-darker,$brand-darker, $background, transparent) 30
+            border-width: 3%
+            border-style: solid
+            @include resp-font(.25vw, .75rem)
+            a
+                font-size: inherit
+
+        .featured-book
+            flex-basis: 23.5%
+            min-width: 150px
+            img
+                box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+                width: 100%
+                max-width: 300px
+        
+        .see-more-link
+            flex-basis: 100%
+            margin-top: 1%
+            a
+                font-size: 175%
+
+        .featured-flex-container
+            display: flex
+            flex-wrap: wrap
+            flex-direction: row
+            flex-basis: 25%
+            gap: 2%
+            align-items: center
+            justify-content: center
+
+        .reading-list-subject
+            width: 23.5%
+            min-width: 150px
+            img
+                box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+                width: 100%
+                max-width: 300px
+            
+
+    #featured-author
+        display: block
+        img
+            max-width: 20%
+            height: auto
+            float: left
+            margin: 0 2% 0% 0
+        p
+            text-align: justify
+            font-size: 150%
+
+.collapsible
+    .closed
+        max-height: calc(.15vw * 500) 
+    .open
+
+    
+
+
+// Old Book and Author list to be cleanded up and/or phased out
+#book-list, #author-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    margin: auto
+    padding:2vh 0
+    max-width: $width
+
+.book-list-item
+    margin: 1% 1% 0 0
+    font-size: 125%
+    flex-basis: 45%
+    gap: 5rem
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    
+    a
+        color: $brand-darker
+
+    br
+        content: ' '
+    br:after 
+        content: ' '
+
+
+#author-list
+    a
+        color: $brand-darker
+        margin: 1% 1% 0 0
+        font-size: 125%
+        flex-basis: 45%
+        gap: 5rem
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+// Ebook Section -- Will move to separate style sheet
+#ebook-head
+    margin: auto
+    max-width: $width
+    display: flex
+    justify-content: space-between
+    align-items: center
+    span
+        max-width: 75%
+        overflow: hidden
+        text-overflow: ellipsis
+
+    h1, h2
+        display: inline
+        @include resp-font(.75vw, .5rem)
+    // #download
+    //     width: 10%
+    :last-child
+        flex-basis: 3%
+        min-width: 25px
+        text-align: right
+
+#ebook-container
+    max-width: $width
+    margin: auto
+
+#ebook-text
+    max-width: $width
+    margin: auto
+    padding-top: 1vh 
+
+.epub-container
+    box-shadow: 1px 10px 23px 12px rgba(0,0,0,0.39)
+   
+.pagination-button
+    height: 30px
+    width: 30px
+    z-index: 10
+    background: #0000
+
+#next-button, #prev-button
+    border: solid #9a9a9a96
+    border-width: 0 5px 5px 0
+    display: block
+    position: relative
+    top: -45vh
+    padding: 3px
+    
+#next-button
+    transform: rotate(-45deg)
+    margin-right: 10px
+    float: right
+
+#prev-button
+    transform: rotate(135deg)
+    margin-left: 10px
+    float: left
+
+

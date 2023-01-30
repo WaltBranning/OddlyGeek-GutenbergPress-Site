@@ -1,0 +1,317 @@
+/* SCSS Gradient */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+* {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: block;
+  background: #ffffea;
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+html a, body a {
+  color: #43a08e;
+  font-weight: 750;
+}
+
+::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: rgba(44, 88, 79, 0.5725490196);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3.25%;
+  min-height: 35px;
+  padding: auto;
+  background: #2d2d2d;
+}
+.navbar a {
+  margin: 0 1%;
+  font-family: "Libre Baskerville", serif;
+  font-size: calc(1rem + 0.5vw);
+  color: #C9D5B5;
+}
+
+#buy-me-a-coffee {
+  width: 22vw;
+  max-width: 160px;
+  max-height: 45px;
+  opacity: 0.85;
+}
+
+.gutenberg-container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.gutenberg-container .nav-cell {
+  width: 16.667%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+}
+.gutenberg-container .nav-cell button {
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+.gutenberg-container .nav-cell .menu-btn {
+  font-size: calc(1rem + 1.25vw);
+  font-weight: bolder;
+  width: 100%;
+}
+.gutenberg-container .nav-cell .arrow-down {
+  line-height: 1%;
+  font-size: 3vw;
+  background-color: transparent;
+}
+.gutenberg-container .nav-cell .book-index-container {
+  font-size: 200%;
+  width: 600%;
+  position: relative;
+  display: none;
+  min-height: 90%;
+  background-color: #34685d;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+}
+.gutenberg-container .nav-cell .book-index-container .outer-book-index {
+  margin: auto;
+  display: inline-block;
+}
+
+.book-index {
+  float: left;
+  margin-right: 1vw;
+}
+.book-index a {
+  cursor: pointer;
+  color: #1d1d1d;
+  position: relative;
+}
+.book-index-list {
+  width: 100%;
+  -o-border-image: linear-gradient(90deg, #34685d, #2c584f, #2c584f, #34685d) 30;
+     border-image: linear-gradient(90deg, #34685d, #2c584f, #2c584f, #34685d) 30;
+  border-width: 1%;
+  border-style: solid;
+  line-height: 95%;
+  display: none;
+}
+.book-index-list a {
+  font-size: 85%;
+  color: #333;
+}
+.book-index-list:target {
+  display: block;
+}
+
+.main-container {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.main-container .features {
+  margin: 1% auto;
+  text-align: center;
+  max-width: 1200px;
+  min-height: 25%;
+}
+.main-container .features a {
+  font-weight: bold;
+  color: #43a08e;
+}
+.main-container .features h1 {
+  color: #2c584f;
+}
+.main-container .features h1 {
+  font-size: calc(2rem + 0.9vw);
+}
+.main-container .features .author-name {
+  font-weight: bolder;
+  font-size: calc(1.25rem + 0.75vw);
+}
+.main-container .features .featured-content {
+  padding: 2% 3%;
+  -o-border-image: linear-gradient(90deg, transparent, #ffffea, #2c584f, #2c584f, #2c584f, #2c584f, #2c584f, #ffffea, transparent) 30;
+     border-image: linear-gradient(90deg, transparent, #ffffea, #2c584f, #2c584f, #2c584f, #2c584f, #2c584f, #ffffea, transparent) 30;
+  border-width: 3%;
+  border-style: solid;
+  font-size: calc(0.75rem + 0.25vw);
+}
+.main-container .features .featured-content a {
+  font-size: inherit;
+}
+.main-container .features .featured-book {
+  flex-basis: 23.5%;
+  min-width: 150px;
+}
+.main-container .features .featured-book img {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  max-width: 300px;
+}
+.main-container .features .see-more-link {
+  flex-basis: 100%;
+  margin-top: 1%;
+}
+.main-container .features .see-more-link a {
+  font-size: 175%;
+}
+.main-container .features .featured-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-basis: 25%;
+  gap: 2%;
+  align-items: center;
+  justify-content: center;
+}
+.main-container .features .reading-list-subject {
+  width: 23.5%;
+  min-width: 150px;
+}
+.main-container .features .reading-list-subject img {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  max-width: 300px;
+}
+.main-container #featured-author {
+  display: block;
+}
+.main-container #featured-author img {
+  max-width: 20%;
+  height: auto;
+  float: left;
+  margin: 0 2% 0% 0;
+}
+.main-container #featured-author p {
+  text-align: justify;
+  font-size: 150%;
+}
+
+.collapsible .closed {
+  max-height: 75vw;
+}
+#book-list, #author-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 2vh 0;
+  max-width: 1200px;
+}
+
+.book-list-item {
+  margin: 1% 1% 0 0;
+  font-size: 125%;
+  flex-basis: 45%;
+  gap: 5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-list-item a {
+  color: #2c584f;
+}
+.book-list-item br {
+  content: " ";
+}
+.book-list-item br:after {
+  content: " ";
+}
+
+#author-list a {
+  color: #2c584f;
+  margin: 1% 1% 0 0;
+  font-size: 125%;
+  flex-basis: 45%;
+  gap: 5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#ebook-head {
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#ebook-head span {
+  max-width: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#ebook-head h1, #ebook-head h2 {
+  display: inline;
+  font-size: calc(0.5rem + 0.75vw);
+}
+#ebook-head :last-child {
+  flex-basis: 3%;
+  min-width: 25px;
+  text-align: right;
+}
+
+#ebook-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#ebook-text {
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 1vh;
+}
+
+.epub-container {
+  box-shadow: 1px 10px 23px 12px rgba(0, 0, 0, 0.39);
+}
+
+.pagination-button {
+  height: 30px;
+  width: 30px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0);
+}
+
+#next-button, #prev-button {
+  border: solid rgba(154, 154, 154, 0.5882352941);
+  border-width: 0 5px 5px 0;
+  display: block;
+  position: relative;
+  top: -45vh;
+  padding: 3px;
+}
+
+#next-button {
+  transform: rotate(-45deg);
+  margin-right: 10px;
+  float: right;
+}
+
+#prev-button {
+  transform: rotate(135deg);
+  margin-left: 10px;
+  float: left;
+}/*# sourceMappingURL=alt-base.css.map */

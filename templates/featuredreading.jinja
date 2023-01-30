@@ -1,0 +1,26 @@
+{% extends 'base.jinja' %}
+
+{% block main %}
+    <section class="features" id="notable-works">
+    <h1>Endearing Classics</h1>
+    <h2>Looking for something to read?</h2>
+    <h3>Check out some of these timeless classics plucked from the annals of literary history</h3>
+    <h4>Or discover something old browsing the current catalog <a href="{{url_for('books')}}">Here</a></h4>
+    <div class="featured-content featured-flex-container" id="notable-books">
+        {% for book in content %}
+            <div class="featured-book" itemscope itemtype="https://schema.org/Book">
+                <meta content="{{book.title}}" itemprop="name">
+                <a href="{{ url_for('title', id=book.text_number) }}" itemprop="url">
+                    <img src="{{ url_for('static', 
+                    filename='imgs/book-covers/'~book.text_number~'.jpg')}}"
+                        alt="Book cover for {{book.title}} by {{book.author}}" itemprop="image">
+                </a>
+            </div>
+        {% endfor %}
+        {# <span class="see-more-link">
+            <a href="{{ url_for('featuredreading', subject='classics') }}">See More</a>
+        </span> #}
+    </div>
+    </section>
+
+{% endblock main %}

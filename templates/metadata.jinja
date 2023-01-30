@@ -1,0 +1,27 @@
+<head>
+{% include 'googletag.jinja' %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:url" content='https://www.gutenbergpress.oddlygeek.com{{request.path}}'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@OddlyGeek">
+<meta name="twitter:creator" content="@WalterBranning">
+{% if request.endpoint == 'title'%}
+    <meta name="author" content="{{content.authors}}">
+    <meta property="og:type" content="book" >
+    <meta name="description" content="{{content.title}} brought to you by The GutenbergPress">
+    <meta name="twitter:description" content="{{content.title}} - brought to you by The GutenbergPress">
+    {% if content.has_cover %}
+        <meta name="twitter:image" property="og:image" content="https://www.gutenbergpress.oddlygeek.com{{url_for('static', filename='imgs/book-covers/'~content.text_number~'.jpg')}}">
+        <meta property="og:image:type" content="image/jpeg" />
+    {% endif %}
+{% elif request.endpoint == 'gutenbergpress' %}
+    <meta name="author" content="https://www.linkedin.com/in/walter-branning/">
+    <meta property="og:type" content="website" >
+    <meta name="twitter:image" property="og:image" content="https://www.gutenbergpress.oddlygeek.com{{url_for('static', filename='imgs/base.jpg')}}">
+    <meta property="og:image:type" content="image/jpeg" >
+    <meta name="description" content="Re-discover some of history's greatest literature. Ancient philosophy or early Sci-Fi, we have something to capture your intrigue or imagination.">
+    <meta name="twitter:description" content="Re-discover some of history's greatest literature. Ancient philosophy or early Sci-Fi, we have something to capture your intrigue or imagination.">
+{% endif %}
+
