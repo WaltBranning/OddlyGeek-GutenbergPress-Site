@@ -1,30 +1,11 @@
 @import "sitesettings"
+// This and alt-base need to be merged and labeled as base 
 
-.head
-    min-height: 35px
-    opacity: 0.8
-    background-image: radial-gradient($brand-dark 1.5px, $brand 0.5px)
-    background-size: 10px 10px
-
-
-    .nav-container    
-        margin: auto
-        padding: 1%
-        max-width: $width
-        display: flex
-        align-items: center
-        justify-content: center
-        max-width: $width
-        gap: 2%
-        a
-            color: black
-            font-weight: bolder
-            @include resp-font(1.5vw, .75rem)
-       
 #filter-container
     margin: auto
     max-width: $width
-    
+
+
 #filter-control-bar
     display: flex
     flex-wrap: wrap
@@ -42,11 +23,11 @@
         color: $laurel-green
         border: 1px solid black
 
-    
     .selectors-drop-down
         label
             @include resp-font(1vw, .9rem)
-        
+
+
 #results 
     display: flex
     flex-wrap: wrap
@@ -67,6 +48,7 @@
             color: $brand-darker
             @include resp-font(.9vw, .9rem)
 
+
 .pagination-bar
     display: flex
     justify-content: center
@@ -81,10 +63,12 @@
         max-width: 50px
         width: 5%
 
+
 #spinner-container
     @include resp-font(.9vw, .9rem)
     text-align: center
     margin-top: 5% 
+
 
 #spinner
     $spinner-thickness: 16px

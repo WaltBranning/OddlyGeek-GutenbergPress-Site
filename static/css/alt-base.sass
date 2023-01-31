@@ -1,4 +1,6 @@
 @import "sitesettings"
+// This and base need to be merged and labeled as base 
+
 
 *
     font-size: $base-font-size
@@ -7,6 +9,7 @@
     text-decoration: none
     box-sizing: border-box
     // font-family: 'Libre Baskerville', serif
+
 
 html, body
     height: 100%
@@ -18,6 +21,8 @@ html, body
         color: $brand-light
         font-weight: 750
 
+
+// Over-riding default scroll bar
 ::-webkit-scrollbar
     width: 0.6vw
 ::-webkit-scrollbar-track
@@ -26,8 +31,6 @@ html, body
     border-radius: 5px
     // background: $brand
     background: #2c584f92
-
-
 
 
 .navbar
@@ -46,21 +49,43 @@ html, body
         @include resp-font(.5vw)
         color: $laurel-green
         // width: 10vw
+
+
 #buy-me-a-coffee
     width: 22vw
     max-width: 160px
     max-height: 45px
     opacity: .85
         // flex-basis: 25vw
-    
+
+
+.head
+    min-height: 35px
+    opacity: 0.8
+    background-image: radial-gradient($brand-dark 1.5px, $brand 0.5px)
+    background-size: 10px 10px
+
+    .nav-container    
+        margin: auto
+        padding: 1%
+        max-width: $width
+        display: flex
+        align-items: center
+        justify-content: center
+        max-width: $width
+        gap: 2%
+
+        a
+            color: black
+            font-weight: bolder
+            @include resp-font(1.5vw, .75rem)
+       
 
 .gutenberg-container
     width: 100%
     height: auto
     margin: auto
     // border: $border-width solid $border-color
-
-
 
     .nav-cell
         width: 16.667%
@@ -72,13 +97,14 @@ html, body
         button
             border: none
             background-color: transparent
-            color: $header-color       
+            color: $header-color   
+
         .menu-btn 
             @include resp-font(1.25vw, 1rem)
-            // background-color: inherit
-            
+            // background-color: inherit 
             font-weight: bolder
             width: 100%
+
         .arrow-down
             line-height: 1%
             font-size: 3vw
@@ -96,6 +122,7 @@ html, body
             .outer-book-index
                 margin: auto
                 display: inline-block
+
 
 .book-index
     float: left
@@ -117,9 +144,11 @@ html, body
         line-height: 95%
         // border-top: 50px solid  #2c584f
         display: none
+
         a
             font-size: 85%
             color: #333
+
         &:target
             display: block
 
@@ -131,20 +160,19 @@ html, body
     overflow-x: hidden
     
     // Features Section of Home  
-
     .features
-        a
-            font-weight: bold
-            color: $brand-light
-        h1
-            color: $brand-darker
-
         margin: 1% auto
         text-align: center
         max-width: $width
         min-height: 25%
+        a
+            font-weight: bold
+            color: $brand-light
+
         h1
-            // 
+            color: $brand-darker
+        
+        h1
             @include resp-font(.9vw, 2rem)
 
         .author-name
@@ -206,9 +234,7 @@ html, body
 .collapsible
     .closed
         max-height: calc(.15vw * 500) 
-    .open
-
-    
+    // .open
 
 
 // Old Book and Author list to be cleanded up and/or phased out

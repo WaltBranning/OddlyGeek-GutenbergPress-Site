@@ -57,6 +57,28 @@ html a, body a {
   opacity: 0.85;
 }
 
+.head {
+  min-height: 35px;
+  opacity: 0.8;
+  background-image: radial-gradient(#34685d 1.5px, #397367 0.5px);
+  background-size: 10px 10px;
+}
+.head .nav-container {
+  margin: auto;
+  padding: 1%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 2%;
+}
+.head .nav-container a {
+  color: black;
+  font-weight: bolder;
+  font-size: calc(0.75rem + 1.5vw);
+}
+
 .gutenberg-container {
   width: 100%;
   height: auto;
@@ -211,6 +233,7 @@ html a, body a {
 .collapsible .closed {
   max-height: 75vw;
 }
+
 #book-list, #author-list {
   display: flex;
   flex-wrap: wrap;
