@@ -19,6 +19,4 @@
 </section>
 
 
-<section>
-    <h4>The Present</h4>
-    <p>TheGutenbergPress is still very much a work in progress with more refinement and content planned!</p>
+
