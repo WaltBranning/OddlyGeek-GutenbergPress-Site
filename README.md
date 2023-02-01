@@ -7,7 +7,7 @@
     
     At first this site was just a mirror to the catalog at PG. Then that changed to, I have always had an interest in literature and have read a number of the classics; that interest is one of the reasons I picked public domain books to begin with. Then after the time I spent with the data from PG I realized there was a niche for promoting some of these old books and providing a place for people to find and read them. Plus, between the Internet Archives and Project Gutenberg there wasn't much of a need for more archiving but an increase in exposure for some forgotten or near forgotten works. And, I hope people find that here, along with some enjoyment, entertainment, and who knows maybe even some enlightenment if that what they are after.
  
-    <h2>The Goal</h2>
+    The Goal
 
         The end goal of [TheGutenbergPress](https://www.gutenbergpress.oddlygeek.com/) is to provide a venue for the appreciation of classic literature. Many of these books are quite old, and all the books here are in the public domain, but just because they are old and free doesn't mean that they aren't worth reading. Some of the greatest literary works in history are in fact very old and are still relevant to this day and age.
 
