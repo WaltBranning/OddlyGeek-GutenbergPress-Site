@@ -10,18 +10,21 @@ $width: 1200px
 $side-bar-pad: 5%
 
 *
-    font-size: 18px
+    font-size: 17px
+    // font-size: 100%
     margin: 0
     padding: 0
     text-decoration: none
     box-sizing: border-box
 
 html
+    // font-family: Calibri, sans-serif
+    font-family: Arial, Helvetica, sans-serif
     height: 100%
+    li
+        list-style-type: none
 
 body
-    display: flex
-    flex-wrap: wrap
     max-width: $width
     // height: calc($width * 1.29411)
     // height: 100vh
@@ -29,6 +32,13 @@ body
     margin: auto
     // @media (min-width: 718px)
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+
+.page
+    height: 1460px
+    display: flex
+    flex-wrap: wrap
+    @media only screen and (max-width: 718px)
+        height: auto
 
 .small-text
     @include resp-font(.4vw, .7rem)
@@ -40,7 +50,7 @@ body
     a
         @include resp-font(.4vw, .7rem)
 
-#side-bar
+.side-bar
     word-wrap: break-word
     @include resp-font(1vw, 1rem)
     letter-spacing: 1px
@@ -101,7 +111,9 @@ body
         font-weight: 1000
         letter-spacing: 2px
         flex-basis: 100%
-        background: #425563
+        // background: #31373a
+        // background: #425563
+        background: #476072
         height: 50px
 
     img
@@ -113,6 +125,9 @@ body
         padding: $spacing 0 0 $side-bar-pad
         @include resp-font(.25vw, 1rem)
         font-weight: 750
+
+    .aside-label a 
+        @include resp-font(.25vw, 1rem)
 
     .aside-detail
         padding: 0 0 $spacing $side-bar-pad
@@ -126,7 +141,7 @@ body
         a
             color: #fffffd
         a:after
-            content: url('/static/imgs/icons/external_wh16x16.png')
+            // content: url('/static/imgs/icons/external_wh16x16.png')
 
     @media only screen and (max-width: 718px)
         padding: 2% 0
@@ -141,27 +156,38 @@ body
                 @include resp-font(.7vw, .9rem)
             
 #main-body
+    padding: 3%
     position: relative
     width: 73%
-    padding: 3%
     text-align: justify
     text-justify: inter-word
 
-    h1
+    h1  
         text-align: center
-        @include resp-font(.35vw, 1rem)
-
+        // margin: 2%
+        letter-spacing: 2px
+        font-weight: 1000
+        @include resp-font(1.5vw, 1.5rem)
+        // text-shadow: 1px 3px 8px #90909095
     h2
         $darker: #5b5b5b
         border-image: linear-gradient(90deg, white ,#ffffff , $darker, $darker, black, $darker,$darker, #ffffff, white) 30
-        border-width: 3%
-        border-style: solid
+        border-width: thin
+        border-bottom-style: solid
         @include resp-font(.5vw, 1rem) 
         text-align: center
         margin: 3% 0
 
+    h3
+        text-align: center
+        @include resp-font(.35vw, 1rem)
+    
+    h4
+        text-align: center
+
     p  
         text-indent: 3%
+        line-height: 125%
         &:not(:last-child)
             margin-bottom: 2%
 
@@ -173,12 +199,17 @@ body
         list-style-type: none
         &:not(:last-child)
             margin-bottom: 1%
+
+    .summary
+        margin: 5% 0
+
     .experience
         &:not(:first-child)
             margin-top: 3%
+        p
+            margin: 3% 0
     @media only screen and (max-width: 718px)
         width: 100%
-
         h3
             text-align: left
 
