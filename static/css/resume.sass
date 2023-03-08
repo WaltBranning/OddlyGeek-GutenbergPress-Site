@@ -34,7 +34,7 @@ body
     box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
 
 .page
-    height: 1460px
+    height: 1296px
     display: flex
     flex-wrap: wrap
     @media only screen and (max-width: 718px)
@@ -68,9 +68,9 @@ body
         text-align: center
         
         max-width: 75%
-        border-radius: 25px
-        border: 1px solid black
-        box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
+        // border-radius: 25px
+        // border: 1px solid black
+        // box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75)
 
     h2
         padding: 0 0 5% $side-bar-pad
@@ -78,6 +78,12 @@ body
         font-weight: 1000
         @include resp-font(1.5vw, 1.5rem)
         text-shadow: 1px 3px 8px #00083995
+
+    .divider
+        text-align: center
+        font-weight: 1000
+        color: #485158
+        // @include resp-font(1vw, 1rem)
 
     @media only screen and (max-width: 718px)
         width: 100vw

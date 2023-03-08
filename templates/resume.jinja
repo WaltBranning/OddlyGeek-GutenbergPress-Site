@@ -15,8 +15,9 @@
 <div class="page" id="page-1">
 <aside class="side-bar">
     {# <h2>Walter Branning</h2> #}
-    <img id="headshot" src="{{ url_for('static', filename='imgs/author_portraits/walter.jpg') }}" 
-         alt="A picture of Walter Branning standing in front of the New York City skyline">
+    <img id="headshot" src="{{ url_for('static', filename='imgs/icons/Modern-WB-Logo.jpg') }}" alt="https://www.kittl.com Created with www.kittl.com">
+    {# <img id="headshot" src="{{ url_for('static', filename='imgs/author_portraits/walter.jpg') }}" 
+         alt="A picture of Walter Branning standing in front of the New York City skyline"> #}
     <div class="aside-item contact">
         
         <h3>Contact</h3>
@@ -42,11 +43,19 @@
     <div class="aside-item">
         <h3>Skills</h3>
         <div id="skills">
-            {% for skill in ['Python3', 'Flask', 'Jinja', 'Self-directed Learning', 
-                             'Creative Problem Solving', 'Back-End Development', 'Linux', 'Versatile',
-                             'Peer Mentoring', 'Technical Training', 'Communication', 'Quick Learner',
-                             'Quality Motivated', 'Analytical', 'CLI']
-            %}
+            <div class="divider"><span>--Strongest Technical--</span></div>
+                {% for skill in ['Python3', 'Flask Microframework', 'Back-End Development', 'Linux Enviroment', 'CLI Tools'] %}
+                    <li><span class="aside-detail"><b>{{skill}}</b></span></li>
+                {% endfor %}
+            <div class="divider"><span>--Other Technical--</span></div>
+                {% for skill in ['CSS', 'HTML', 'SASS', 'JavaScript', 'SQLAlchemy'] %}
+                    <li><span class="aside-detail"><b>{{skill}}</b></span></li>
+                {% endfor %}
+            <div class="divider"><span>--Professional--</span></div>
+                {% for skill in ['Creative Problem Solving', 'Peer Mentoring','Technical Training', 
+                                'Communication', 'Quick Learner', 'Quality Motivated', 'Analytical', 
+                                'Versatile', 'Self-directed Learning', ]
+                %}
                 <li><span class="aside-detail"><b>{{skill}}</b></span></li>
             {% endfor %}
         </div>
@@ -61,7 +70,7 @@
         <h4>Software Engineer</h4>
         <div class="separator"><h2></h2></div>
         <p class="summary"><b>Building, Learning, Creating - </b>These words reflect my passion and drive to 
-    learn how things work, and how to take that knowledge and apply it to create solutions. 
+    learn how things work, and then to take that knowledge and apply it. 
     Possessing a naturally curious mind that enjoys discovering the why and how
     things work and blessed with an ability to quickly grasp concepts and apply them. This
     ability along with a willing eagerness to learn, allow for quick adaptation to the meet the
@@ -69,8 +78,11 @@
     rise to meet it.</b></p>  
 
     <div class="separator"><h2>Professional Summary</h2></div>
-
-         <p class="summary">Some relevant past experience has been: Python applications including both online,
+        <p class="summary">Developing a solid understanding of the Python language its functionality and 
+            methodologies have been my primary focus, and I am most confident in the areas of server side 
+            web-development and Python applications. However, in order to build a robust skillset, I have 
+            not limited myself to backend but have gained a measure of frontend familiarity and skills.</p>
+        <p class="summary">Some relevant past experience has been: Python applications including both online,
     such as websites and API development; as well as local applications including: file
     modification batching routines, web scraping, cleaning and parsing data dumps. Including experience developing 
     in Windows but with more familiarity in Linux development environments and work flows; including working from 
@@ -104,7 +116,6 @@
     <div class="aside side-bar">
         <div class="aside-item education">  
             <h3>Education</h3>
-
             <span class="aside-label">Gadsden State Community College</span>
             <span class="aside-detail small-text">Associates Degree<br>Electronics Engineering Technologies<br>Oct 2001 - May 2004</span>
             {# <span class="aside-detail aside-text smaller-text">
@@ -127,7 +138,6 @@
             
             {# <span class="aside-label">Codecadmy</span>
             <span class="aside-detail small-text">Course Certificate<br>Learn Python 3 Course<br>Summer 2022</span> #}
-
         </div> 
     </div>
     <section id="main-body">
@@ -136,10 +146,14 @@
         <h4>Anniston, AL January 2003 – October 2021</h4>
         <p>Was regarded as a subject matter specialist and
            frequently called upon to provide technical guidance and training on the testing,
-           fabrication, and repair of difficult or complex problems or assemblies.</p>
+           fabrication, and repair of difficult or complex problems or assemblies. Often 
+           serving as the prototype or first piece fabricator, working together with engineers 
+           and quality assurance to find best shop practices and manufacturing procedures for the 
+           assembly along with any design issues that effect functionality or ability to be fabricated. </p>
         <ul>
-            <li>&#10022; Communicated with engineers and vendors to correct any design issues and submit ideas for improvements in future revisions.</li>
             <li>&#10022; Wrote and modified circuit testing programs for DIT-MCO automated computer controlled circuit analyzers.</li>
+            <li>&#10022; Made high quality repairs that meets or exceeds the quality assurance requirements demanded for mission critical electronic and electrical equipment.
+            <li>&#10022; Communicated with engineers and vendors to correct any design issues and submit ideas for improvements in future revisions.</li>
             <li>&#10022; Leveraged comprehensive technical and analytical expertise to solve complex problems by interpreting blueprints, wiring diagrams, and schematics.</li>
             <li>&#10022; Worked together with engineers and quality assurance to find best shop practices and manufacturing procedures for the assembly.</li>
         </ul>
