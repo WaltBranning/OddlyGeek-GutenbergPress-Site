@@ -116,6 +116,7 @@
     <div class="aside side-bar">
         <div class="aside-item education">  
             <h3>Education</h3>
+            <div class="divider"><span>--Degree--</span></div>
             <span class="aside-label">Gadsden State Community College</span>
             <span class="aside-detail small-text">Associates Degree<br>Electronics Engineering Technologies<br>Oct 2001 - May 2004</span>
             {# <span class="aside-detail aside-text smaller-text">
@@ -136,8 +137,20 @@
                 and electronic theory and practical skills.
             </span> #}
             
-            {# <span class="aside-label">Codecadmy</span>
-            <span class="aside-detail small-text">Course Certificate<br>Learn Python 3 Course<br>Summer 2022</span> #}
+            {# <span class="aside-label">Courses / Certificates</span> #}
+        </div>
+        <div class="aside-item">
+            <div class="divider"><span>--Courses / Certificates--</span></div>
+            <div ><span class="aside-label">Codecademy:</span></div>
+                <div class="course-list">
+                {% for skill in ['Machine Learning/AI Engineering Foundations', 
+                                 'Learn Data Analysis with Pandas',
+                                 'Linear Algebra', 'Learn SQL', 'Learn Git & GitHub']
+                %}
+                <li class="aside-detail"><span ><b>{{skill}}</b></span></li>
+                {% endfor %}
+                </div>
+            
         </div> 
     </div>
     <section id="main-body">

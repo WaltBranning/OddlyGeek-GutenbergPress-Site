@@ -128,7 +128,7 @@ body {
   font-size: calc(1rem + 0.25vw);
 }
 .aside-item .aside-detail {
-  padding: 0 0 3% 5%;
+  padding: 1.5% 0 1.5% 5%;
   font-weight: 500;
 }
 .aside-item .aside-text {
