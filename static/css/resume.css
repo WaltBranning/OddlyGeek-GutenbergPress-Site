@@ -14,6 +14,9 @@ html {
 html li {
   list-style-type: none;
 }
+html a {
+  color: #274255;
+}
 
 body {
   max-width: 1200px;
