@@ -50,6 +50,10 @@ body {
   font-size: calc(0.7rem + 0.4vw);
 }
 
+.separator small {
+  font-size: 0.65em;
+}
+
 .side-bar {
   word-wrap: break-word;
   font-size: calc(1rem + 1vw);
@@ -212,6 +216,9 @@ body {
 }
 #main-body .experience p {
   margin: 3% 0;
+}
+#main-body .experience h3 a {
+  font-size: calc(1rem + 0.35vw);
 }
 @media only screen and (max-width: 718px) {
   #main-body {

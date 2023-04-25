@@ -52,6 +52,10 @@ body
     a
         @include resp-font(.4vw, .7rem)
 
+.separator
+    small
+        font-size: .65em
+
 .side-bar
     word-wrap: break-word
     @include resp-font(1vw, 1rem)
@@ -150,7 +154,7 @@ body
     .external-link
         a
             color: #fffffd
-        a:after
+        // a:after
             // content: url('/static/imgs/icons/external_wh16x16.png')
 
     @media only screen and (max-width: 718px)
@@ -218,6 +222,9 @@ body
             margin-top: 3%
         p
             margin: 3% 0
+        h3 a
+            @include resp-font(.35vw, 1rem)
+                
     @media only screen and (max-width: 718px)
         width: 100%
         h3
